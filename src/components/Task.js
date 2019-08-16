@@ -1,12 +1,17 @@
 import React from 'react';
 
 const Task = (props) =>{
-    const {text, date, id} = props.task
+    const style = {
+        color: 'red',
+    }
+    const {text, date, id, active, important} = props.task
+
+    if(active){
 
     return (
        <div>
            <p>
-               <strong>{text}</strong> - <span>{date} </span>
+               <strong style={important ? style : null }>{text}</strong> - <span>{date} </span>
                <button onClick={() => props.change(id)}>Completed</button>
                <button onClick={() => props.delete(id)}>X</button> 
            </p>
@@ -14,6 +19,10 @@ const Task = (props) =>{
 
        </div>
     )
-}
+}else{
+    return (
+        <div>task completed</div>
+    )
+}}
 
 export default Task
