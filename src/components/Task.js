@@ -8,7 +8,7 @@ const Task = (props) =>{
            <p>
                <strong>{text}</strong> - <span>{date} </span>
                <button onClick={() => props.change(id)}>Completed</button>
-               <button onClick={() => props.delete(id)} >X</button> 
+               <button onClick={() => props.delete(id)}>X</button> 
            </p>
            
 

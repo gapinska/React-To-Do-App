@@ -14,7 +14,18 @@ class App extends Component{
       active: true,
       finishDate: null
 
-    }]
+    },
+    {
+      id: 1,
+      text: 'do launderette',
+      date: '2018-01-10',
+      important: true,
+      active: true,
+      finishDate: null
+
+    }
+  
+  ]
   }
 
   deleteTask = (id) => {
@@ -27,8 +38,8 @@ class App extends Component{
     })
 
   }
-  changeTaskStatus = () => {
-    let tasks = Array.from(this.state.task)
+  changeTaskStatus = (id) => {
+    let tasks = Array.from(this.state.tasks)
     tasks.forEach(task =>{
       if (task.id === id){
         task.active = false
