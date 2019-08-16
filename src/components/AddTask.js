@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
-import './AddTask.css'
+import './AddTask.css';
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 
 class AddTask extends Component{
     state = {
         text: '',
-        checked: false
+        checked: false,
+        date: "2019-01-25"
     }
+    
     render(){
         return(
             <>
@@ -16,7 +20,7 @@ class AddTask extends Component{
                 <label htmlFor="important">Priority</label>
                 <br/>
                 <label htmlFor="date">Deadline </label>
-                <input type="date" value="2019-01-25" min="2019-01-01"/>
+                <input type="date" value={this.state.date} min="2019-01-01" max="2020-12-31"/>
                 <button>Add</button>
 
 
