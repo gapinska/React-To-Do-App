@@ -32,6 +32,7 @@ class App extends Component{
     tasks.forEach(task =>{
       if (task.id === id){
         task.active = false
+        task.finishDate= new Date().getTime()
       }
     })
     this.setState({
