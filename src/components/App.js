@@ -28,6 +28,15 @@ class App extends Component{
 
   }
   changeTaskStatus = () => {
+    let tasks = Array.from(this.state.task)
+    tasks.forEach(task =>{
+      if (task.id === id){
+        task.active = false
+      }
+    })
+    this.setState({
+      tasks
+    })
 
   }
 
