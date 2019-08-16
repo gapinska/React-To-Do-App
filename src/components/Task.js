@@ -4,7 +4,7 @@ const Task = (props) =>{
     const style = {
         color: 'red',
     }
-    const {text, date, id, active, important} = props.task
+    const {text, date, id, active, important, finishDate} = props.task
 
     if(active){
 
@@ -20,8 +20,16 @@ const Task = (props) =>{
        </div>
     )
 }else{
+    const finish = new Date(finishDate).toLocaleString()
+
     return (
-        <div>task completed</div>
+        <div>
+            <p>
+               <strong >{text}</strong> <em>( should be done till {date} ) </em><br/>
+               - confirmation of completion <span> {finish}</span>
+               <button onClick={() => props.delete(id)}>X</button> 
+           </p>
+        </div>
     )
 }}
 
