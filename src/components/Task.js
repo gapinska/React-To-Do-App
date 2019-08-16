@@ -1,10 +1,18 @@
 import React from 'react';
 
-const Task = () =>{
+const Task = (props) =>{
+    const {text, date} = props.task
+
     return (
-        <h3>
-            Task            
-        </h3>
+       <div>
+           <p>
+               <strong>{text}</strong> - <span>{date} </span>
+               <button>Completed</button>
+                <button>X</button> 
+           </p>
+           
+
+       </div>
     )
 }
 
