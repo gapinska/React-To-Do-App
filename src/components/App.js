@@ -17,13 +17,20 @@ class App extends Component{
     }]
   }
 
+  deleteTask = (id) => {
+
+  }
+  changeTaskStatus = () => {
+
+  }
+
 
   render() {
     return(
       <div className="App">
         TODO APP
         <AddTask/>
-        <TaskList tasks={this.state.tasks}/>
+        <TaskList tasks={this.state.tasks} delete={this.deleteTask} change={this.changeTaskStatus} />
       </div>
     )
   }
