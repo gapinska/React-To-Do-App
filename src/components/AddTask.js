@@ -2,12 +2,15 @@ import React, {Component} from 'react'
 
 
 class AddTask extends Component{
-    state = {}
+    state = {
+        text: ''
+    }
     render(){
         return(
             <>
-            <div>
-                Add task
+            <div className="form">
+                <input type="text" placeholder="add task" value={this.state.text}/>
+                
             </div>
             <hr/>
             </>
