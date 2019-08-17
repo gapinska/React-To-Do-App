@@ -8,7 +8,7 @@ class AddTask extends Component{
     state = {
         text: '',
         checked: false,
-        date: "2019-01-25"
+        date: new Date().toISOString().slice(0,10)
     }
     
     render(){
