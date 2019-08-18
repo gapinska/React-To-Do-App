@@ -30,6 +30,15 @@ class AddTask extends Component{
     }
 
     handleClick = () =>{
+        if(text.length>0){
+        const{text, checked, date} = this.state
+        const add = this.props.addTask()
+        if(add) this.setState({
+            text:'',
+            checked: false,
+            date: minDate
+        })
+    }
         
     }
     
