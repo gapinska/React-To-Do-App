@@ -2,31 +2,13 @@ import React, {Component} from 'react';
 import './App.css';
 import AddTask from './AddTask';
 import TaskList from './TaskList';
+import { ok } from 'assert';
 
 class App extends Component{
   counter = 0
 
   state = {
-    tasks: [{
-      id: 0,
-      text: 'clean the house',
-      date: '2018-02-15',
-      important: true,
-      active: true,
-      finishDate: null
-
-    },
-    {
-      id: 1,
-      text: 'do launderette',
-      date: '2018-01-10',
-      important: true,
-      active: true,
-      finishDate: null
-
-    }
-  
-  ]
+    tasks: []
   }
 
   deleteTask = (id) => {
@@ -60,16 +42,12 @@ class App extends Component{
       important,
       active: true,
       finishDate: null
-    
+  
   }
-  this.counter++
-  this.setState(pevState => ({
+  this.counter++  
+  this.setState(prevState => ({
     tasks: [...prevState.tasks, task]
   }))
-
-
-
-
 
   return true
   }
