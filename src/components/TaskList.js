@@ -12,8 +12,11 @@ const TaskList = (props) => {
 
   if(active.length >= 2){
       active.sort((a,b)=> {
-          if(a.text < b.text) return -1;
-          if (a.text > b.text) return 1;
+
+        a= a.text.toLowerCase();
+        b= b.text.toLowerCase()
+          if(a < b) return -1;
+          if (a > b) return 1;
           return 0
 
       })
